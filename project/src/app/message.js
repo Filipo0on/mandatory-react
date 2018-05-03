@@ -7,8 +7,25 @@ The component will then render an appropriate message.
 
 import React from 'react';
 
+export default class Message extends React.Component {
+    render(props) {
+        return (
+            <div>{this.props.state}</div>
+        );
+    }
+}
+
+
+
+
+
+/*
 export default function Message(props){
+
+
   return (
-    <div>To be implemented...</div>
+    <div>Player 1</div>
+
   );
 }
+*/

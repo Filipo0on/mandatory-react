@@ -17,6 +17,7 @@
 }
 
 .tile {
+
   height: 50px;
   width: 50px;
   transition: color 0.3s ease, background-color 0.3s ease, text-shadow 0.3s ease;
@@ -29,12 +30,30 @@
   cursor: pointer;
 }
 
-.tile.plr1 {
+.tileplr1 {
+  height: 50px;
+  width: 50px;
+  transition: color 0.3s ease, background-color 0.3s ease, text-shadow 0.3s ease;
+  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 36px;
+  cursor: pointer;
   background-color: powderblue;
   color: mediumslateblue;
 }
 
-.tile.plr2 {
+.tileplr2 {
+  height: 50px;
+  width: 50px;
+  transition: color 0.3s ease, background-color 0.3s ease, text-shadow 0.3s ease;
+  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 36px;
+  cursor: pointer;
   background-color: peachpuff;
   color: palevioletred;
 }

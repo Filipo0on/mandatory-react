@@ -19,9 +19,52 @@ and all tiles in an element with a `board` CSS class.
 */
 
 export default class App extends React.Component {
+    constructor () {
+        super()
+        this.state = {
+            turn: "player 1",
+            board: [0,0,0,0,0,0,0,0,0],
+
+
+        };
+        this.changeTheStatus = this.changeTheStatus.bind(this);
+
+    }
+
+    changeTheStatus() {
+
+        if(this.state.turn === "player 1") {
+            this.setState({
+                turn: "player 2"
+            });
+        }else {
+            this.setState({
+                turn: "player 1"
+            });
+
+        }
+    }
+
+
   render(){
     return (
-      <div>To be implemented...</div>
+        <div className="container">
+          <Message state={this.state.turn}/>
+            <div className="board">
+
+                  <Tile  turn={this.state.turn} fnChangeStatus={()=>this.changeTheStatus()}/>
+                  <Tile  turn={this.state.turn} fnChangeStatus={()=>this.changeTheStatus()}/>
+                  <Tile  turn={this.state.turn} fnChangeStatus={()=>this.changeTheStatus()}/>
+                  <Tile  turn={this.state.turn} fnChangeStatus={()=>this.changeTheStatus()}/>
+                  <Tile  turn={this.state.turn} fnChangeStatus={()=>this.changeTheStatus()}/>
+                  <Tile  turn={this.state.turn} fnChangeStatus={()=>this.changeTheStatus()}/>
+                  <Tile  turn={this.state.turn} fnChangeStatus={()=>this.changeTheStatus()}/>
+                  <Tile  turn={this.state.turn} fnChangeStatus={()=>this.changeTheStatus()}/>
+                  <Tile  turn={this.state.turn} fnChangeStatus={()=>this.changeTheStatus()}/>
+
+            </div>
+        </div>
+
     );
   }
 }

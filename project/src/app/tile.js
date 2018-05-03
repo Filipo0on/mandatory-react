@@ -16,8 +16,60 @@ The tile should render with the classes...
 
 import React from 'react';
 
+export default class Tile extends React.Component {
+    constructor (props) {
+        super(props)
+        this.state = {
+            styling: ["tile"],
+            occupied: false,
+            symbol: ""
+        };
+
+        this.select = this.select.bind(this);
+    }
+
+    select() {
+
+        if(this.state.occupied === false && this.props.turn === "player 1" ) {
+            this.setState({
+                styling: ["tileplr1"],
+                occupied: true,
+                symbol: "X"
+
+            });
+
+            this.props.fnChangeStatus()
+
+        }else if(this.state.occupied === false) {
+
+            this.setState({
+                styling: ["tileplr2"],
+                occupied: true,
+                symbol: "O"
+
+            });
+            this.props.fnChangeStatus()
+        }
+
+    }
+
+  render(props) {
+  return (
+      <div onClick={this.select} className={this.state.styling}>
+          {this.state.symbol}
+      </div>
+  );
+ }
+}
+
+
+
+/*
+första funktionen som man fick med.
+
 export default function Tile(props){
   return (
-    <div>To be implemented...</div>
+      <div className={this.props.styling}></div>
   );
 }
+*/
